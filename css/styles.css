@@ -1,0 +1,860 @@
+/* Color Scheme*/
+:root {
+  --primary-bg-color: #005f73;
+  --secondary-bg-color: #f4f4f4;
+  --text-color: #333;
+  --text-color-inverse: #ffffff;
+  --hover-effect-color: #ffffff;
+  --link-hover-color: #182252d0;
+  --hero-overlay-color: rgba(0, 0, 0, 0.5);
+  --border-color-light: #00ccf527;
+  --form-bg-color: #e0f2fe;
+  --button-color: #023e8a;
+  --button-hover-color: #0077b6;
+  --footer-bg-color: #023047;
+  --primary-font: "Roboto Condensed", sans-serif;
+  --lang-bg-color: hsl(200, 84%, 22%);
+  --lang-hover-color: #e0e0e0;
+}
+/* Basic Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
+}
+body {
+  font-family: var(--primary-font);
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: var(--secondary-bg-color);
+}
+
+/* Navigation Styles */
+nav {
+  background-color: var(--primary-bg-color); /* Darker shade of blue */
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+}
+
+nav .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+  position: relative; /* For the hover effect */
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 0; /* Ensures the line doesn't touch the text */
+  position: relative; /* Required for hover effect positioning */
+}
+
+nav ul li a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  animation: hover-line 0.3s ease-in-out forwards;
+}
+
+/* Animation for the hover effect */
+@keyframes hover-line {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+/* Hero Section Styles */
+.hero-section {
+  background-image: url("/img/Solar-Panel.png"); /* Ensure this is the correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0; /* No margin */
+  padding: 0; /* No padding */
+  position: relative;
+  overflow: hidden; /* Prevents any overflow */
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--hero-overlay-color);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Ensures content is above the overlay */
+  color: #ffffff; /* Ensures text color is white for readability */
+}
+
+/* Fixed Header Styles */
+header nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: background-color 0.5s ease; /* Smooth transition for background */
+  background-color: rgba(0, 95, 115, 0); /* Initially transparent */
+  z-index: 10; /* Ensure header is above other content */
+}
+
+/* On scroll, the header background becomes slightly opaque */
+header nav.scrolled {
+  background-color: var(--footer-bg-color);
+  /*background-color: rgba(0, 95, 115, 0.9);*/ /* Adjust transparency as needed */
+}
+/* Initial header style with transparency */
+header nav {
+  background-color: transparent; /* Make it transparent initially */
+  transition: background-color 0.5s ease; /* Smooth transition for background */
+}
+
+/* Style when the header is not over the hero section */
+header nav.solid {
+  background-color: var(--footer-bg-color);
+  /*background-color:var(--primary-bg-color);*/ /* Solid color when not over hero */
+}
+/* Burger Icon Style in Header*/
+.burger-icon {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+}
+
+.burger-icon i {
+  color: var(--text-color-inverse);
+  font-size: 1.5rem;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .burger-icon {
+      display: block; /* Show burger icon */
+  }
+
+  nav ul {
+      display: none; /* Hide the navigation links */
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: var(--primary-bg-color);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+  }
+
+  nav ul.active {
+      display: flex; /* Show navigation when active */
+  }
+
+  nav ul li {
+      width: 100%;
+  }
+
+  nav ul li a {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      text-align: left;
+  }
+
+  .language-switcher {
+      position: static; /* Adjust position for language switcher */
+      width: auto;
+  }
+
+  /* Adjust logo and burger menu alignment */
+  nav .logo,
+  .burger-icon {
+      padding: 0.5rem;
+  }
+}
+
+/* Styles for Icon */
+.logo {
+  display: flex;
+  align-items: center;
+  /* If there is excess space, consider adding justify-content: left; */
+}
+
+.logo-svg {
+  flex-shrink: 0;
+  width: 48px; /* Adjust based on the desired size of the logo */
+  height: auto; /* Keep the aspect ratio */
+  margin-right: 8px; /* Adjust the space between the logo and the text */
+}
+
+.logo-svg svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Remaining navigation and layout styles */
+nav .logo,
+nav ul {
+  margin: 0;
+  padding: 0.5rem 1rem; /* Adjusted padding for logo and navigation items */
+}
+
+nav ul li a {
+  padding: 0.5rem 1rem; /* Provide padding for clickable area */
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+/* Smooth hover effect for navigation links */
+nav ul li a:hover,
+nav ul li a:focus {
+  color: var(--link-hover-color); /* Example hover color, adjust as needed */
+  background-color: rgba(255, 255, 255, 0.2); /* Optional: adds background on hover */
+  border-radius: 5px; /* Rounded corners for the hover background */
+}
+
+/* Language Switcher Styles */
+.language-switcher {
+  position: relative;
+  display: inline-block;
+  width: 200px; /* Adjust the width as needed */
+  font-family: "Roboto Condensed", sans-serif; /* Your chosen font */
+}
+
+/* Style for the current language and clickable area */
+.current-lang {
+  position: relative; /* To position the pseudo-element absolutely relative to this container */
+  padding: 10px;
+  background-color: var(--lang-bg-color);
+  color: white; /* Text color */
+  border: 1px solid var(--border-color-light); /* Border color to match the background */
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+/* Add this to your styles.css file */
+.current-lang::after {
+  content: " \25BC"; /* This is a Unicode character for a downward arrow */
+  color: #fff; /* Set the color to white */
+  font-size: 0.8em; /* You can adjust the size as needed */
+  padding-left: 10px; /* Add some space between the text and the arrow */
+}
+
+/* This will change the arrow direction when the dropdown is open */
+.current-lang.open::after {
+  content: " \25B2"; /* This is a Unicode character for an upward arrow */
+}
+
+/* Style for the flag icons */
+.flag {
+  width: 24px; /* Fixed width for flags */
+  height: 16px; /* Fixed height for flags */
+  background-size: cover; /* Cover the size of the div */
+  background-repeat: no-repeat;
+  background-position: center; /* Center the flag in the div */
+  margin-right: 10px;
+}
+/* Style for the dropdown options */
+.lang-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%; /* Match the width of the parent */
+  background-color: white; /* Background color for the dropdown */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+  border-radius: 4px;
+  z-index: 1000;
+  overflow: hidden; /* Ensure no overflow for border-radius */
+  user-select: none; /* Prevent text selection */
+}
+
+/* Style for each language option in the dropdown */
+.lang-options .option {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color-light); /* Optional separator */
+  background-color: var(--lang-bg-color); /* Slight grey background for each option */
+}
+
+/* Remove the border for the last option */
+.lang-options .option:last-child {
+  border-bottom: none;
+}
+
+/* Style for the dropdown option hover state */
+.lang-options .option:hover {
+  background-color: var(--link-hover-color); /* A shade darker on hover */
+}
+
+/* Main content Styles */
+main {
+  padding: 20px;
+}
+
+h1,
+h2 {
+  color: var(--footer-bg-color); /* Medium shade of blue */
+}
+/* Section Titles Styles */
+h2 {
+    font-family: 'Rubik', sans-serif; /* A more robust, attention-grabbing font */
+    font-size: 2.5rem; /* A larger font size for emphasis */
+    text-transform: uppercase; /* Making all letters uppercase for stylistic choice */
+    margin: 1rem 0; /* More margin for better spacing */
+    padding-bottom: .5rem; /* Padding at the bottom for a balanced look */
+    position: relative; /* To position the pseudo-elements */
+    display: inline-block; /* So that the pseudo-elements align with the text */
+    background-image: linear-gradient(120deg, var(--button-color) 0%, var(--button-hover-color) 100%);
+    -webkit-background-clip: text;
+    color: transparent; /* Color transition for a dynamic effect */
+    transition: color 0.3s ease;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--button-color); /* Line color */
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+h2:hover {
+    color: var(--button-hover-color); /* Change text color on hover */
+}
+
+h2:hover::after {
+    transform: scaleX(0.8); /* Shorten the line on hover */
+    background: var(--button-hover-color); /* Line hover color */
+}
+
+/* For non-hover devices */
+@media (hover: none) {
+    h2::after {
+        content: none; /* Remove the after pseudo-element */
+    }
+}
+
+/* Mobile Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 1.75rem; /* Adjust size for mobile screens */
+        margin: 1rem auto; /* Center the title on smaller screens */
+        text-align: center; /* Center align the title text */
+    }
+}
+.logo-link {
+  text-decoration: none; /* Removes underline from the link */
+  color: inherit; /* Inherits the text color from the parent elements */
+  display: flex; /* Keeps the flex layout of the logo */
+  align-items: center; /* Centers items vertically */
+}
+
+
+.section {
+  margin-bottom: 20px;
+}
+/* About Section Styles */
+#about {
+  background-color: var(--secondary-bg-color); /* Set the background color to match your site's design */
+}
+
+#about div div {
+  width: 80%;
+  margin: 0 auto; /* Centers the .container within #about */
+}
+
+#about div div {
+  text-align: center; /* Centers the text within .about-content */
+}
+
+/* Responsive Image Gallery */
+#gallery div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+#gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+/* Centering gallery images and videos */
+#gallery div,
+#videos div {
+  text-align: center; /* Center-align the content */
+}
+/* Custom Video Player Styles */
+.custom-video-player {
+  max-width: 640px; /* Adjust as needed */
+  margin: 20px auto;
+  position: relative;
+  background: var(--primary-bg-color);
+}
+
+.video-player {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.volume-icon {
+  color: var(--text-color-inverse);
+  margin-right: 5px; /* Space between icon and slider */
+}
+
+.volume-control {
+  width: 100px; /* Adjust based on preference, ensuring compact size */
+}
+
+/* Ensure all icons in video controls are consistently styled */
+.video-controls i {
+  color: var(--text-color-inverse);
+  cursor: pointer;
+}
+
+.video-controls {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay for controls */
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+  visibility: hidden; /* Hide controls initially */
+  transition: visibility 0.5s ease;
+}
+
+.video-controls-visible {
+  visibility: visible;
+}
+
+.custom-video-player:hover .video-controls {
+  visibility: visible; /* Show controls on hover */
+}
+
+.icon-control {
+  background: none;
+  border: none;
+  color: var(--text-color-inverse);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#playPause {
+  margin-right: 15px;
+}
+.progress-bar {
+  width: 320px;
+}
+.volume-control{
+  width: 60px;
+}
+
+#fullscreenBtn {
+  color: var(--text-color-inverse);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Current Time and Duration Styles */
+#currentTime, #duration {
+  color: var(--text-color-inverse);
+  margin: 0 2px;
+  font-weight: bold;
+}
+
+/* Current Time and Duration Styles */
+.time-container {
+  display: flex; /* Make the time elements display inline */
+  align-items: center; /* Align time vertically */
+}
+.time-separator-fa {
+  display: inline-block;
+  transform: rotate(65deg); /* Adjust the angle if necessary */
+  font-size: 0.75em; /* Adjust size to fit with your design */
+  vertical-align: middle;
+}
+
+/* Responsiveness and Mobile Friendly Adjustments */
+@media screen and (max-width: 768px) {
+  .video-controls {
+      flex-direction: column;
+      padding: 5px;
+  }
+
+  .progress-bar, .volume-control {
+      width: 100%; /* Full width for better control on mobile */
+      margin-top: 5px;
+  }
+
+  .icon-control, #currentTime, #duration, #fullscreenBtn {
+      font-size: 16px; /* Adjust icon size for better mobile interaction */
+  }
+}
+
+
+/* Gallery container style for center alignment */
+#gallery div {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow multiple lines of items */
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Optional: Adds space between the images */
+}
+
+/* Style for images to ensure consistent sizing and centering */
+#gallery img {
+  width: 250px; /* Set a fixed width */
+  height: 150px; /* Set a fixed height */
+  object-fit: cover; /* Ensures the images cover the area, might crop */
+  margin: 0 auto; /* Center the images if not using flexbox on the container */
+  display: block; /* Needed to apply margin auto for centering */
+  transition: transform 0.3s ease-in-out; /* For a smooth hover effect */
+}
+
+/* Hover effect for images to slightly scale up */
+#gallery img:hover {
+  transform: scale(1.05); /* Slightly increase the size on hover */
+}
+
+/* Ensure videos are centered and responsive */
+#videos video {
+  max-width: 100%; /* Ensures the video is not wider than its container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Block display to apply margin */
+  margin: 0 auto; /* Center the video */
+}
+
+/* Media Responsiveness*/
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form Styles */
+form {
+  background-color: var(--form-bg-color); /* Lightest shade of blue */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px; /* Adjusted for spacing */
+}
+
+/* Style input, textarea, and select elements uniformly */
+form input[type="text"],
+form input[type="email"],
+form input[type="phone"],
+form textarea,
+form select {
+  font-family: var(--primary-font), sans-serif; /* Fallback to sans-serif */
+  font-size: large;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px; /* Consistent margin for all form elements */
+  border: 1px solid #ccc; /* Border to match across all elements */
+  border-radius: 5px; /* Rounded corners for all form elements */
+  box-shadow: none; /* Remove any default browser styling */
+  appearance: none; /* Remove default system appearance on select */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background-position: right 10px center; /* Position for custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-size: 16px 12px; /* Size of custom dropdown arrow */
+}
+
+/* Specifically for the textarea to ensure consistent height */
+form textarea {
+  height: 200px;
+  min-height: 50px;
+  resize: vertical; /* Allows the user to adjust the height */
+}
+
+.phone-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adds some space between the selector and the input */
+}
+
+.country-code-selector {
+  width: 90px; /* Allows the select box to shrink to fit its content */
+  flex-grow: 0; /* Prevents the selector from growing to fill extra space */
+  padding: 0.5rem; /* Adjust padding to match the height of the input */
+  cursor: pointer;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"]#phone {
+  flex-grow: 1; /* Allows the input to grow and fill the remaining space */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+/* Custom arrow for the select element using a background image */
+.country-code-selector {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>'); /* SVG for the dropdown arrow */
+}
+
+/* Style adjustments for the button */
+form button {
+  background-color: var(--button-color); /* Vibrant shade of blue */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  display: block; /* Ensure button is block level for full width */
+  width: 100%;
+  margin-top: 10px; /* Space above the button */
+}
+
+form button:hover {
+  background-color: var(--button-hover-color); /* Slightly lighter vibrant blue */
+}
+
+form button {
+  background-color: var(--button-color); /* Vibrant shade of blue */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  display: block; /* Ensure button is block level for full width */
+  width: 100%;
+}
+
+form button:hover {
+  background-color: var(--button-hover-color); /* Slightly lighter vibrant blue */
+}
+
+
+/* Footer Styles */
+footer {
+  background-color: var(--footer-bg-color); /* Darker shade of blue */
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.social-icons a {
+  color: #ffffff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-icons i {
+  font-size: 1.5rem;
+}
+
+/* Base styles for Team section */
+#team {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr)); /* Adjust as needed */
+  gap: 20px;
+  padding: 20px;
+  padding-top: 70px;
+}
+
+.person {
+  margin-top: 40px;
+  background-color: #ffffff; /* Light background for contrast */
+  border: 1px solid #e0e0e0; /* Slight border for definition */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  overflow: hidden; /* Ensures content fits within the borders */
+  transition: transform 0.3s ease-in-out;
+}
+
+.person:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.person-photo {
+  flex-shrink: 0; /* Prevent the photo from shrinking */
+  width: 150px; /* Fixed width */
+  height: 150px; /* Fixed height */
+  object-fit: cover; /* Ensure photos cover the area well */
+}
+
+.person-info {
+  padding: 15px;
+  flex: 1; /* Take up the remaining space */
+}
+
+/* Alternating layout styles */
+.person:nth-child(odd) .person-photo {
+  order: 1; /* Photo on the left */
+  border-right: 1px solid #e0e0e0; /* Separate image from content */
+}
+
+.person:nth-child(odd) .person-info {
+  order: 2; /* Text on the right */
+}
+
+.person:nth-child(even) .person-photo {
+  order: 2; /* Photo on the right */
+  border-left: 1px solid #e0e0e0; /* Separate image from content, for even items */
+}
+
+.person:nth-child(even) .person-info {
+  order: 1; /* Text on the left */
+}
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  nav ul li {
+      margin: 10px 0;
+  }
+  .person {
+      flex-direction: column; /* Stack elements on smaller screens */
+  }
+
+  .person-photo,
+  .person-info {
+      order: unset; /* Reset order for stacked layout */
+      width: 100%; /* Full width for photos */
+  }
+
+  .person-photo {
+      border-right: none; /* Remove borders for mobile layout */
+      border-left: none;
+      border-bottom: 1px solid #e0e0e0; /* Add bottom border instead */
+  }
+}
+
+/* Styles for Carousel in Gallery section*/
+.carousel {
+  overflow: hidden;
+  position: relative; /* Add a position to contain absolute children */
+  width: 100%; /* Adjust as necessary */
+  height: 200px; /* This height should be adjusted based on your images */
+}
+
+.carousel-images img {
+  width: 100%; /* Ensure images fill the container */
+  height: auto; /* Maintain aspect ratio */
+  position: absolute;
+  display: none; /* Hide all images initially */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-images img.active {
+  display: block; /* Show the active image */
+  opacity: 1;
+}
+
+
+.carousel-controls button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--button-color);
+  color: var(--text-color-inverse);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 2;
+}
+
+.carousel-controls .prev {
+  left: 10px;
+}
+
+.carousel-controls .next {
+  right: 10px;
+}
+
+.carousel-dots {
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  z-index: 2;
+}
+
+.carousel-dots button {
+  background-color: #bbb;
+  border: none;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-dots button:focus,
+.carousel-dots button.active {
+  background-color: var(--button-color);
+}
+
+/* Ensure the first image is visible on load */
+.carousel-images img:first-child {
+  opacity: 1;
+  z-index: 1;
+}

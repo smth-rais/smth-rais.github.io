@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="pageTitle">RAIS Heat Pumps</title> <!-- Assuming you also want to translate the title -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="/img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a66164a434.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="languageSwitcher.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#" class="logo-link">
+            <div class="logo">
+                <div class="logo-svg">
+                    <img src="img/logo.svg" alt="RAIS Energy Logo" class="logo-svg"/>
+                </div>
+                RAIS Energy
+            </div>
+        </a>
+        <div class="burger-icon" onclick="toggleNav()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li><a href="#home" data-key="home">Home</a></li>
+            <li><a href="#about" data-key="about">About</a></li>
+            <li><a href="#gallery" data-key="gallery">Gallery</a></li>
+            <li><a href="#videos" data-key="videos">Videos</a></li>
+            <li><a href="#contact" data-key="contact">Contact</a></li>
+            <li><a href="team.html" data-key="team">Team</a></li>            
+        </ul>
+        
+        <div class="language-switcher">
+            <div class="current-lang" id="currentLang">
+                <div class="flag">
+                    <img src="img/en.svg" alt="English" width="24" height="16">
+                </div>
+                <span>English</span>
+            </div>
+            <div class="lang-options">
+                <div class="option" data-lang="az">
+                    <div class="flag"><img src="img/az.svg" alt="Azərbaycan dili" width="24" height="16"></div>
+                    <span>Azərbaycan dili</span>
+                </div>
+                <div class="option" data-lang="ru">
+                    <div class="flag"><img src="img/ru.svg" alt="Русский язык" width="24" height="16"></div>
+                    <span>Русский язык</span>
+                </div>
+                <div class="option" data-lang="en">
+                    <div class="flag"><img src="img/en.svg" alt="English" width="24" height="16"></div>
+                    <span>English</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section id="home" class="hero-section">
+    <div class="hero-content">
+        <h1 data-key="welcomeMessage">Welcome to Our Product</h1>
+        <p data-key="discover">Discover the features and benefits of our product.</p>
+    </div>
+</section>
+<main>
+    <section id="about">
+        <div class="container">
+            <h2 data-key="about">About RAIS Energy</h2>
+            <div data-key="aboutContent">RAIS Energy is dedicated to providing innovative and sustainable energy solutions. Our mission is to harness the power of renewable resources to create a cleaner, more efficient world.</div>
+        </div>
+    </section>    
+    <section id="gallery">
+        <h2 data-key="gallery">Photo Gallery</h2>
+        <div class="carousel" id="carousel">
+            <div class="carousel-images">
+                <img src="img/heat-pump-1.jpeg" alt="Product Photo 1">
+                <img src="img/heat-pump-2.jpeg" alt="Product Photo 2">
+                <img src="img/heat-pump-1.jpeg" alt="Product Photo 3">
+                <img src="img/heat-pump-2.jpeg" alt="Product Photo 4">
+                <!-- Add more images as needed -->
+            </div>
+            <div class="carousel-controls">
+                <button class="prev" aria-label="Previous slide" onclick="changeSlide(-1)">❮</button>
+                <button class="next" aria-label="Next slide" onclick="changeSlide(1)">❯</button>
+            </div>
+            <div class="carousel-dots"></div>
+        </div>
+    </section>
+    
+    <section id="videos">
+        <h2 data-key="videos">Product Videos</h2>
+        <div class="custom-video-player">
+            <video id="videoElement" src="img/heat-pump-vid.mp4" class="video-player"></video>
+            <div class="video-controls">
+                <button id="playPause" class="icon-control"><i class="fas fa-play"></i></button>
+                <input type="range" id="progress" min="0" max="100" value="0" class="progress-bar">
+                <i class="fas fa-volume-up volume-icon"></i> <!-- Volume Icon -->
+                <input type="range" id="volume" min="0" max="1" step="0.05" value="1" class="volume-control">
+                <span class="time-container">
+                    <span id="currentTime">0:00</span>
+                    <i class="fas fa-slash time-separator-fa"></i>
+                    <span id="duration">2:02</span>
+                </span>
+                <button id="fullscreenBtn" class="icon-control"><i class="fas fa-arrows-alt"></i></button>
+            </div>
+        </div>
+        
+        
+    </section>
+    
+    <section id="contact">
+        <h2 data-key="contact">Contact Us</h2>
+        <form>
+            <label for="name" data-key="nameLabel">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Name Surname">
+            
+            <label for="email" data-key="emailLabel">Email:</label>
+            <input type="email" id="email" name="email" placeholder="your@example.com">
+
+            <label for="phone" data-key="phoneLabel">Phone:</label>
+            <div class="phone-input-container">
+                <select id="countryCode" class="country-code-selector">
+                    <option value="+994">+994</option>
+                    <option value="+90">+90</option>
+                    <option value="+7">+7</option>
+                </select>
+                <input type="text" id="phone" name="phone" placeholder="(XX)XXX-XX-XX">
+            </div>
+            <label for="message" data-key="messageLabel">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            
+            <button type="submit" data-key="submitButton">Send</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>© 2024 RAIS Energy. All rights reserved.</p>
+    <!-- Social Icons -->
+    <div class="social-icons">
+        <a href="mailto:qayibovkamran@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.facebook.com/kamran.qayibov.3"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/kamranqayibov"><i class="fab fa-instagram"></i></a>
+        <a href="tel:+905346267034"><i class="fas fa-phone"></i></a>
+    </div>
+</footer>
+
+</body>
+</html>

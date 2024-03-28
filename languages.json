@@ -1,0 +1,54 @@
+{
+    "az": {
+      "pageTitle": "RAIS İstilik Nasosları",
+      "home": "Əsas Səhifə",
+      "gallery": "Qalereya",
+      "videos": "Videolar",
+      "contact": "Əlaqə",
+      "about":"Haqqımızda",
+      "aboutContent": "RAIN Energy innovativ və davamlı enerji həlləri hazırlamağa sadiqdir. Missiyamız daha təmiz, daha səmərəli dünya yaratmaq üçün bərpa olunan mənbələrin gücündən istifadə etməkdir.",
+      "team":"Komanda",
+      "welcomeMessage": "Bizim Məhsulumuza Xoş Gəlmisiniz",
+      "discover": "Məhsulumuzun xüsusiyyətləri və üstünlükləri ilə tanış olun.",
+      "nameLabel": "Ad:",
+      "emailLabel": "E-poçt:",
+      "phoneLabel" : "Telefon:",
+      "messageLabel" : "Mətn:",
+      "submitButton" : "Göndər:"
+    },
+    "ru": {
+      "pageTitle": "RAIS Тепловые насосы",
+      "home": "Главная",
+      "gallery": "Галерея",
+      "videos": "Видео",
+      "contact": "Контакт",
+      "about":"О нас",
+      "aboutContent": "Компания RAIN Energy занимается разработкой инновационных и устойчивых энергетических решений. Наша миссия - использовать силу возобновляемых ресурсов для создания более чистого и эффективного мира.",
+      "team":"Команда",
+      "welcomeMessage": "Добро пожаловать в наш продукт",
+      "discover": "Познакомьтесь с функциями и преимуществами нашего продукта.",
+      "nameLabel": "Имя:",
+      "emailLabel": "Электронная почта:",
+      "phoneLabel" : "Номер телефона:",
+      "messageLabel" : "Сообщение:",
+      "submitButton" : "Отправить:"
+    },
+    "en": {
+      "pageTitle": "RAIS Heat Pumps",
+      "home": "Home",
+      "gallery": "Gallery",
+      "videos": "Videos",
+      "contact": "Contact",
+      "about":"About",
+      "aboutContent": "RAIN Energy is dedicated to providing innovative and sustainable energy solutions. Our mission is to harness the power of renewable resources to create a cleaner, more efficient world.",
+      "team":"Team",
+      "welcomeMessage": "Welcome to Our Product",
+      "discover": "Discover the features and benefits of our product.",
+      "nameLabel": "Name",
+      "emailLabel": "E-mail",
+      "phoneLabel" : "Phone",
+      "messageLabel" : "Message",
+      "submitButton" : "Submit"
+    }
+  }
+  
