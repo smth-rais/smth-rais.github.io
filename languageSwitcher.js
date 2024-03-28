@@ -156,4 +156,6 @@ document.addEventListener('DOMContentLoaded', function () {
             hideLangOptions();
         });
     });
+    // Initial call to set the default language to Azerbaijani
+    applyTranslations('az'); // Set Azerbaijani as the default language
 });
