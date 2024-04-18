@@ -22,6 +22,8 @@ function setupCarousel() {
     let autoPlayId;
     const slides = document.querySelectorAll('.carousel-images img');
     const dotsContainer = document.querySelector('.carousel-dots');
+    const prevButton = document.querySelector('.prev');  // Select the previous button
+    const nextButton = document.querySelector('.next');  // Select the next button
 
     // Create dots
     function createDots() {
@@ -37,6 +39,7 @@ function setupCarousel() {
     // Update Carousel
     function updateCarousel() {
         slides.forEach((slide, index) => {
+            slide.style.display = index === currentIndex ? 'block' : 'none'; // Using display for better performance with many slides
             slide.style.opacity = index === currentIndex ? '1' : '0';
         });
         const dots = document.querySelectorAll('.dot');
@@ -67,13 +70,19 @@ function setupCarousel() {
         clearInterval(autoPlayId);
     }
 
+    // Connect buttons to the carousel control
+    prevButton.addEventListener('click', () => changeSlide(-1));  // Connect previous button
+    nextButton.addEventListener('click', () => changeSlide(1));  // Connect next button
+
     createDots();
     updateCarousel();
     startAutoplay();
 
+    // Pause and restart autoplay on mouse interactions
     document.getElementById('carousel').addEventListener('mouseenter', pauseAutoplay);
     document.getElementById('carousel').addEventListener('mouseleave', startAutoplay);
 }
+
 
 // Video player setup
 function setupVideoPlayer() {

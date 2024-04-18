@@ -558,8 +558,9 @@ h2:hover::after {
 
 /* Style for images to ensure consistent sizing and centering */
 #gallery img {
-  width: 250px; /* Set a fixed width */
-  height: 150px; /* Set a fixed height */
+  width: 100%; /* Make the image width responsive to the container size */
+  max-width: 500px; /* New fixed maximum width */
+  height: auto; /* Adjust height automatically to maintain aspect ratio */
   object-fit: cover; /* Ensures the images cover the area, might crop */
   margin: 0 auto; /* Center the images if not using flexbox on the container */
   display: block; /* Needed to apply margin auto for centering */
@@ -570,6 +571,7 @@ h2:hover::after {
 #gallery img:hover {
   transform: scale(1.05); /* Slightly increase the size on hover */
 }
+
 
 /* Ensure videos are centered and responsive */
 #videos video {
@@ -706,8 +708,6 @@ footer {
 
 /* Base styles for Team section */
 #team {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr)); /* Adjust as needed */
   gap: 20px;
   padding: 20px;
   padding-top: 70px;
@@ -789,17 +789,32 @@ footer {
 /* Styles for Carousel in Gallery section*/
 .carousel {
   overflow: hidden;
-  position: relative; /* Add a position to contain absolute children */
-  width: 100%; /* Adjust as necessary */
-  height: 200px; /* This height should be adjusted based on your images */
+  position: relative;
+  width: 100%; /* Ensures the carousel takes the full width of its container */
+  height: 500px; /* Adjusted height to fit larger images */
 }
 
+
 .carousel-images img {
-  width: 100%; /* Ensure images fill the container */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%; /* Ensures each image scales with its container */
+  height: 500px; /* New fixed height to match the carousel container */
   position: absolute;
   display: none; /* Hide all images initially */
+  object-fit: cover; /* Ensures images cover the area without being distorted */
   transition: opacity 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel {
+    height: 300px; /* Smaller height for smaller screens */
+  }
+  .carousel-images img {
+    height: 300px; /* Adjust height accordingly */
+  }
+  .carousel-controls button {
+    padding: 10px 15px; /* Smaller buttons on smaller screens */
+    font-size: 24px; /* Smaller icons for smaller screens */
+  }
 }
 
 .carousel-images img.active {
@@ -810,43 +825,48 @@ footer {
 
 .carousel-controls button {
   position: absolute;
-  top: 50%;
+  top: 50%; /* Center vertically */
   transform: translateY(-50%);
-  background-color: var(--button-color);
-  color: var(--text-color-inverse);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black for better visibility */
+  color: white;
   border: none;
   cursor: pointer;
-  padding: 10px;
-  z-index: 2;
+  padding: 15px 25px; /* Larger buttons for easier interaction */
+  z-index: 100;
+  font-size: 30px; /* Larger font size for visibility */
 }
 
 .carousel-controls .prev {
-  left: 10px;
+  left: 20px; /* Slightly more inset to avoid being on the screen edge */
 }
 
 .carousel-controls .next {
-  right: 10px;
+  right: 20px;
 }
 
+
 .carousel-dots {
+  overflow-x: auto; /* Allows horizontal scrolling */
+  white-space: nowrap; /* Keeps dots in a single line */
   text-align: center;
   padding: 10px;
   position: absolute;
   bottom: 10px;
   width: 100%;
-  z-index: 2;
+  z-index: 100;
 }
 
 .carousel-dots button {
   background-color: #bbb;
   border: none;
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  width: 10px; /* Smaller width */
+  height: 10px; /* Smaller height */
   border-radius: 50%;
-  margin: 0 5px;
+  margin: 0 2px; /* Smaller margin */
   cursor: pointer;
 }
+
 
 .carousel-dots button:focus,
 .carousel-dots button.active {
