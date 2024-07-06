@@ -790,37 +790,83 @@ footer {
 .carousel {
   overflow: hidden;
   position: relative;
-  width: 100%; /* Ensures the carousel takes the full width of its container */
-  height: 500px; /* Adjusted height to fit larger images */
+  width: 100%; /* Full width of the container */
 }
 
+.carousel-images {
+  display: flex; /* Aligns the children (figure) in a row */
+  width: 100%;
+  transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+figure {
+  flex: 0 0 100%; /* Each figure takes up 100% of the carousel's width */
+  max-width: 100%; /* Maximum width of the figure */
+  position: relative; /* Positioning context for the caption */
+  text-align: center; /* Centers the content */
+  margin: 0; /* Remove margin to avoid layout shift */
+}
 
 .carousel-images img {
-  width: 100%; /* Ensures each image scales with its container */
-  height: 500px; /* New fixed height to match the carousel container */
+  width: 100%; /* Full width to stretch across the carousel */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove inline default */
+}
+
+figcaption {
+  position: absolute; /* Position relative to the figure */
+  bottom: 10px; /* Positioned at the bottom of the figure */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Perfect center alignment */
+  color: var(--text-color); /* Styling for caption */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+  padding: 5px 10px; /* Padding around text */
+  border-radius: 5px; /* Rounded corners */
+  width: calc(100% - 20px); /* Full width minus padding for responsiveness */
+}
+
+.carousel-controls button {
   position: absolute;
-  display: none; /* Hide all images initially */
-  object-fit: cover; /* Ensures images cover the area without being distorted */
-  transition: opacity 0.5s ease-in-out;
+  top: 50%; /* Align vertically */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Visible against images */
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px; /* Larger area for easier clicking */
+  z-index: 100;
 }
 
-@media screen and (max-width: 768px) {
-  .carousel {
-    height: 300px; /* Smaller height for smaller screens */
-  }
-  .carousel-images img {
-    height: 300px; /* Adjust height accordingly */
-  }
-  .carousel-controls button {
-    padding: 10px 15px; /* Smaller buttons on smaller screens */
-    font-size: 24px; /* Smaller icons for smaller screens */
-  }
+.carousel-controls .prev {
+  left: 10px;
 }
 
-.carousel-images img.active {
-  display: block; /* Show the active image */
-  opacity: 1;
+.carousel-controls .next {
+  right: 10px;
 }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+}
+
+.carousel-dots button {
+  background-color: #bbb;
+  border: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 2px;
+  cursor: pointer;
+}
+
+.carousel-dots button.active {
+  background-color: var(--button-color);
+}
+
 
 
 .carousel-controls button {
@@ -877,4 +923,45 @@ footer {
 .carousel-images img:first-child {
   opacity: 1;
   z-index: 1;
+}
+/* Contact Information Section Styles */
+.contact-info-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contact-info-container p {
+  margin-bottom: 10px;
+}
+
+.contact-info-container a {
+  color: var(--button-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-info-container a:hover {
+  color: var(--button-hover-color);
+}
+/* Explore Button Styles */
+.explore-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--button-color);
+  color: var(--text-color-inverse);
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-2px);
 }

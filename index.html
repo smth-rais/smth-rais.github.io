@@ -12,6 +12,73 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="languageSwitcher.js" defer></script>
     <script src="script.js" defer></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #007BFF;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            margin-top: 30px;
+            color: #007BFF;
+        }
+
+        p, ul {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .container ul li strong {
+            color: #007BFF;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -64,66 +131,200 @@
 
 <section id="home" class="hero-section">
     <div class="hero-content">
-        <h1 data-key="welcomeMessage">Welcome to Our Product</h1>
-        <p data-key="discover">Discover the features and benefits of our product.</p>
+        <h1 data-key="welcomeMessage">Welcome to RAİN Heating and Cooling Pumps Company</h1>
+        <p data-key="discover">Discover the features and benefits of our eco-friendly heating and cooling solutions.</p>
+        <a href="#about" class="explore-button" data-key="exploreButton">Explore</a>
     </div>
 </section>
 <main>
     <section id="about">
         <div class="container">
-            <h2 data-key="about">About RAIS Energy</h2>
-            <div data-key="aboutContent">RAIS Energy is dedicated to providing innovative and sustainable energy solutions. Our mission is to harness the power of renewable resources to create a cleaner, more efficient world.</div>
+            <h2 data-key="about">About</h2>
+            <div>
+                <p data-key="aboutContent">Welcome to RAİN Heating and Cooling Pumps Company. Founded by Dr. Rasim Najaf oglu Aliyev, a distinguished expert in Earth Sciences, our company is dedicated to providing sustainable and eco-friendly heating solutions using advanced heat pump technology. Established by several specialists with extensive scientific and technical work experience, our enterprise focuses on entrepreneurship by utilizing natural resources to produce economic, environmentally friendly, and inexhaustible heating potential through heat pumps.</p>
+                
+                <h3 data-key="aboutFounder">About Our Founder</h3>
+                <p data-key="founderDetails">Dr. Rasim Najaf oglu Aliyev, with a Doctorate in Earth Sciences from Azerbaijan and Geoecology Sciences from Ukraine, is a recognized member of the Russian Academy of Natural Sciences. His extensive career includes roles as a chief geologist in oil and gas extraction, environmental protection specialist, and professor at various prestigious universities. With a deep commitment to alternative energy, Dr. Aliyev has pioneered numerous research projects and continues to lead innovative efforts in the field.</p>
+
+                <h3 data-key="mission">Our Mission</h3>
+                <p data-key="missionDetails">Our mission is to harness the natural thermal energy of the Earth to provide efficient, sustainable, and eco-friendly heating and cooling solutions. We aim to reduce reliance on traditional fuel sources, minimize environmental impact, and contribute to the global transition towards renewable energy.</p>
+
+                <h3 data-key="goals">Our Goals</h3>
+                <ul>
+                    <li data-key="goal1">Develop and implement advanced heat pump systems utilizing geothermal, hydrothermal, aerothermal, and bio-thermal sources.</li>
+                    <li data-key="goal2">Promote sustainable energy solutions that reduce carbon emissions and enhance energy efficiency.</li>
+                    <li data-key="goal3">Provide reliable, cost-effective heating and cooling solutions for residential, commercial, and industrial applications.</li>
+                </ul>
+            </div>
         </div>
     </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 data-key="services">Our Services</h2>
+            <div data-key="servicesContent">
+                <p data-key="servicesIntro">At RAİN Heating and Cooling Pumps Company, we offer a range of services designed to meet your heating and cooling needs:</p>
+                <ul>
+                    <li data-key="service1">We use Freon and Glycol as Refrigerant for our heat pumps.</li>
+                    <li data-key="service2"><strong>Geothermal Heat Pumps:</strong> Utilizing the Earth’s natural heat, these pumps offer consistent and efficient heating and cooling, independent of external weather conditions.</li>
+                    <li data-key="service3"><strong>Hydrothermal Heat Pumps:</strong> Harnessing the thermal energy from water bodies, including seas, lakes, and rivers, for effective temperature control.</li>
+                    <li data-key="service4"><strong>Aerothermal Heat Pumps:</strong> Using air as a source of heat, these pumps are ideal for climates with moderate temperature variations.</li>
+                    <li data-key="service5"><strong>Bio-thermal Heat Pumps:</strong> Converting waste materials from domestic, agricultural, and industrial sources into heat energy, ensuring sustainable waste management.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-us">
+        <div class="container">
+            <h2 data-key="whyChooseUs">Why Choose Us?</h2>
+            <div data-key="whyChooseUsContent">
+                <ul>
+                    <li data-key="reason1"><strong>Eco-friendly Solutions:</strong> Our heat pumps reduce carbon emissions and utilize renewable energy sources, contributing to a healthier environment.</li>
+                    <li data-key="reason2"><strong>Cost-Effective:</strong> By reducing energy consumption, our systems offer significant cost savings on heating and cooling.</li>
+                    <li data-key="reason3"><strong>Innovative Technology:</strong> We use cutting-edge technology to ensure high efficiency and reliability in all our products.</li>
+                    <li data-key="reason4"><strong>Expertise:</strong> Led by Dr. Aliyev, our team of experienced specialists is dedicated to delivering top-quality solutions and services.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits">
+        <div class="container">
+            <h2 data-key="benefits">Benefits of Heat Pumps</h2>
+            <div data-key="benefitsContent">
+                <ul>
+                    <li data-key="benefit1"><strong>High Efficiency:</strong> Heat pumps have a high coefficient of performance (COP), often exceeding 4, meaning they deliver more energy than they consume.</li>
+                    <li data-key="benefit2"><strong>Cost Savings:</strong> Significant reductions in energy bills compared to traditional heating and cooling systems.</li>
+                    <li data-key="benefit3"><strong>Sustainability:</strong> Use of renewable energy sources helps reduce greenhouse gas emissions.</li>
+                    <li data-key="benefit4"><strong>Versatility:</strong> Suitable for a wide range of applications, including heating, cooling, and hot water supply.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 data-key="projects">Our Projects</h2>
+            <div data-key="projectsContent">
+                <p data-key="projectsIntro">We have successfully implemented projects in various regions, demonstrating the practicality and efficiency of our heat pump systems. Our ongoing research and development efforts aim to expand these solutions to more areas, including the newly liberated regions of Azerbaijan.</p>
+            </div>
+        </div>
+    </section>
+    
     <section id="gallery">
         <h2 data-key="gallery">Photo Gallery</h2>
         <div class="carousel" id="carousel">
             <div class="carousel-images">
-                <!--
-                <img src="img/heat-pump-1.jpeg" alt="Product Photo 1">
-                <img src="img/heat-pump-2.jpeg" alt="Product Photo 2">
-                <img src="img/heat-pump-1.jpeg" alt="Product Photo 3">
-                <img src="img/heat-pump-2.jpeg" alt="Product Photo 4">
-                -->
-                <img src="img/tmp/1.png" alt="Product Photo 1">
-                <img src="img/tmp/2.png" alt="Product Photo 2">
-                <img src="img/tmp/3.png" alt="Product Photo 3">
-                <img src="img/tmp/4.png" alt="Product Photo 4">
-                <img src="img/tmp/5.png" alt="Product Photo 5">
-                <img src="img/tmp/6.png" alt="Product Photo 6">
-                <img src="img/tmp/7.png" alt="Product Photo 7">
-                <img src="img/tmp/8.png" alt="Product Photo 8">
-                <img src="img/tmp/9.png" alt="Product Photo 9">
-                <img src="img/tmp/10.png" alt="Product Photo 10">
-                <img src="img/tmp/11.png" alt="Product Photo 11">
-                <img src="img/tmp/12.jpg" alt="Product Photo 12">
-                <img src="img/tmp/13.jpg" alt="Product Photo 13">
-                <img src="img/tmp/14.jpg" alt="Product Photo 14">
-                <img src="img/tmp/15.jpg" alt="Product Photo 15">
-                <img src="img/tmp/16.jpg" alt="Product Photo 16">
-                <img src="img/tmp/17.jpg" alt="Product Photo 17">
-                <img src="img/tmp/18.jpg" alt="Product Photo 18">
-                <img src="img/tmp/19.jpg" alt="Product Photo 19">
-                <img src="img/tmp/20.jpg" alt="Product Photo 20">
-                <img src="img/tmp/21.jpg" alt="Product Photo 21">
-                <img src="img/tmp/22.jpg" alt="Product Photo 22">
-                <img src="img/tmp/23.jpg" alt="Product Photo 23">
-                <img src="img/tmp/24.jpg" alt="Product Photo 24">
-                <img src="img/tmp/25.jpg" alt="Product Photo 25">
-                <img src="img/tmp/26.jpg" alt="Product Photo 26">
-                <img src="img/tmp/27.jpg" alt="Product Photo 27">
-                <img src="img/tmp/28.jpg" alt="Product Photo 28">
-                <img src="img/tmp/29.jpg" alt="Product Photo 29">
-                <img src="img/tmp/30.jpg" alt="Product Photo 30">
-                <img src="img/tmp/31.jpg" alt="Product Photo 31">
-                <img src="img/tmp/32.jpg" alt="Product Photo 32">
-                <img src="img/tmp/33.jpg" alt="Product Photo 33">
-                <img src="img/tmp/34.jpg" alt="Product Photo 34">
-                <img src="img/tmp/35.jpg" alt="Product Photo 35">
-                <img src="img/tmp/36.jpg" alt="Product Photo 36">
-                <img src="img/tmp/37.jpg" alt="Product Photo 37">
-                <img src="img/tmp/38.jpg" alt="Product Photo 38">
-                <!-- Add more images jpgneeded -->
+                <figure>
+                    <img src="img/tmp/12.jpg" alt="Product Photo 12">
+                    <figcaption>Product Photo 12</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/13.jpg" alt="Product Photo 13">
+                    <figcaption>Product Photo 13</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/14.jpg" alt="Product Photo 14">
+                    <figcaption>Product Photo 14</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/15.jpg" alt="Product Photo 15">
+                    <figcaption>Product Photo 15</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/16.jpg" alt="Product Photo 16">
+                    <figcaption>Product Photo 16</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/17.jpg" alt="Product Photo 17">
+                    <figcaption>Product Photo 17</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/18.jpg" alt="Product Photo 18">
+                    <figcaption>Product Photo 18</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/19.jpg" alt="Product Photo 19">
+                    <figcaption>Product Photo 19</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/20.jpg" alt="Product Photo 20">
+                    <figcaption>Product Photo 20</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/21.jpg" alt="Product Photo 21">
+                    <figcaption>Product Photo 21</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/22.jpg" alt="Product Photo 22">
+                    <figcaption>Product Photo 22</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/23.jpg" alt="Product Photo 23">
+                    <figcaption>Product Photo 23</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/24.jpg" alt="Product Photo 24">
+                    <figcaption>Product Photo 24</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/25.jpg" alt="Product Photo 25">
+                    <figcaption>Product Photo 25</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/26.jpg" alt="Product Photo 26">
+                    <figcaption>Product Photo 26</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/27.jpg" alt="Product Photo 27">
+                    <figcaption>Product Photo 27</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/28.jpg" alt="Product Photo 28">
+                    <figcaption>Product Photo 28</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/29.jpg" alt="Product Photo 29">
+                    <figcaption>Product Photo 29</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/30.jpg" alt="Product Photo 30">
+                    <figcaption>Product Photo 30</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/31.jpg" alt="Product Photo 31">
+                    <figcaption>Product Photo 31</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/32.jpg" alt="Product Photo 32">
+                    <figcaption>Product Photo 32</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/33.jpg" alt="Product Photo 33">
+                    <figcaption>Product Photo 33</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/34.jpg" alt="Product Photo 34">
+                    <figcaption>Product Photo 34</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/35.jpg" alt="Product Photo 35">
+                    <figcaption>Product Photo 35</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/36.jpg" alt="Product Photo 36">
+                    <figcaption>Product Photo 36</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/37.jpg" alt="Product Photo 37">
+                    <figcaption>Product Photo 37</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/tmp/38.jpg" alt="Product Photo 38">
+                    <figcaption>Havadan istilik enerjisini almaq üçün qurğu</figcaption>
+                </figure>
+                <!-- Add more figures as needed -->
             </div>
             <div class="carousel-controls">
                 <button class="prev" aria-label="Previous slide" onclick="changeSlide(-1)">❮</button>
@@ -133,37 +334,32 @@
         </div>
     </section>
     
-    <section id="videos">
-        <h2 data-key="videos">Product Videos</h2>
-        <div class="custom-video-player">
-            <video id="videoElement" src="img/heat-pump-vid.mp4" class="video-player"></video>
-            <div class="video-controls">
-                <button id="playPause" class="icon-control"><i class="fas fa-play"></i></button>
-                <input type="range" id="progress" min="0" max="100" value="0" class="progress-bar">
-                <i class="fas fa-volume-up volume-icon"></i> <!-- Volume Icon -->
-                <input type="range" id="volume" min="0" max="1" step="0.05" value="1" class="volume-control">
-                <span class="time-container">
-                    <span id="currentTime">0:00</span>
-                    <i class="fas fa-slash time-separator-fa"></i>
-                    <span id="duration">2:02</span>
-                </span>
-                <button id="fullscreenBtn" class="icon-control"><i class="fas fa-arrows-alt"></i></button>
-            </div>
-        </div>    
-    </section>
     <section id="team">
-        <h2 data-key="team">Komanda</h2>
+        <h2 data-key="team">Team</h2>
         <div class="person">
-            <img src="/img/No-User-Photo.jpeg" alt="Man 1" class="person-photo">
+            <img src="/img/Man1-Photo.jpg" alt="Man 1" class="person-photo">
             <div class="person-info">
-                <h3 data-key="man1Name">Əliyev Rasim Nəcəf oğlu</h3>
-                <p data-key="man1Description">Azərbaycanın Yer Elmləri üzrə Elmlər Doktoru, Ukraynanın Geoekologiya Elmləri Doktoru, Rusiyanın Təbiət Elmləri Akademiyasının Həqiqi üzvüyəm. Dövlət Qulluğunun Kiçik Dövlət Müşaviriyəm. Uzun müddət N.Nərimanov adına neft-qaz çıxarma idarəsində mədənin baş geoloqu, və “Neft Daşları”nda ətraf mühitin və dənizin şirklənmədəm qorunması problemləri ilə məşğul olmuşam və tədqiqatlarımı hələ də davam etdirirəm 2007-ci ildə yeni yaradılan Energetika Nazirliyində “Alternativ enerji və ekologiya” şöbəsinin müdir müavini, 2013-cü ildən isə yeni yaradılan “Alternativ və Bərpa olunan enerji mənbələri üzrə Dövlət Agentliyində həmin vəzifədə çalışmışam. Təqaüdə çıxana qədər Dövlət Neft Akademiyasında, İdarəçilik Akademiyasında, Qafqaz Unuversitetində, Bakı Dövlət Unuversitetində professor vəzifəsində çalışmışam.</p>
+                <h3 data-key="man1Name">Aliyev Rasim</h3>
+                <p data-key="man1Description">Dr. Rasim Najaf oglu Aliyev, a Doctor of Earth Sciences from Azerbaijan and a Doctor of Geoecology from Ukraine, is a member of the Russian Academy of Natural Sciences. He is a Junior State Advisor in Public Service. For a long time, he worked as the chief geologist at the N.Narimanov Oil and Gas Production Department and dealt with environmental and sea protection issues at "Neft Daşları" and continues his research. In 2007, he became the Deputy Head of the "Alternative Energy and Ecology" Department in the newly established Ministry of Energy, and since 2013 he has been working in the same position at the newly created State Agency for Alternative and Renewable Energy Sources. Until his retirement, he worked as a professor at the State Oil Academy, the Academy of Public Administration, Qafqaz University, and Baku State University.</p>
             </div>
         </div>
-    </section>    
+        <p data-key="teamEmployees">Our company consists of several employees, including 3 geologists, a lawyer, an IT engineer, and an accountant.</p>
+    </section>
+       
+    <section id="contact-info" class="my-16 text-center">
+        <h2 class="custom-h2" data-key="contactInfo">Contact Information</h2>
+        <div class="contact-info-container">
+            <p><strong>Email:</strong> <a href="mailto:rasim_aliyev@yahoo.com" class="text-blue-700">rasim_aliyev@yahoo.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+994557781923" class="text-blue-700">+994-055-778-19-23</a></p>
+            <p><strong>Whatsapp:</strong> <a href="tel:+994518591723" class="text-blue-700">+994-051-859-17-23</a></p>
+            
+            <p><strong>Address:</strong> Baku, Azerbaijan</p>
+        </div>
+    </section>
+
     <section id="contact">
         <h2 data-key="contact">Contact Us</h2>
-        <form>
+        <form action="https://formspree.io/f/xnnaqlpk" method="POST">
             <label for="name" data-key="nameLabel">Name:</label>
             <input type="text" id="name" name="name" placeholder="Name Surname">
             
@@ -184,11 +380,11 @@
             
             <button type="submit" data-key="submitButton">Send</button>
         </form>
-    </section>
+    </section>    
 </main>
 
 <footer>
-    <p>© 2024 RAIS Energy. All rights reserved.</p>
+    <p data-key="footer">© 2024 RAIS Energy. All rights reserved.</p>
     <!-- Social Icons -->
     <div class="social-icons">
         <a href="mailto:qayibovkamran@gmail.com"><i class="fas fa-envelope"></i></a>

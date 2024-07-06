@@ -20,7 +20,7 @@ function applyScrollEffects() {
 function setupCarousel() {
     let currentIndex = 0;
     let autoPlayId;
-    const slides = document.querySelectorAll('.carousel-images img');
+    const slides = document.querySelectorAll('.carousel-images figure');
     const dotsContainer = document.querySelector('.carousel-dots');
     const prevButton = document.querySelector('.prev');  // Select the previous button
     const nextButton = document.querySelector('.next');  // Select the next button
@@ -82,7 +82,6 @@ function setupCarousel() {
     document.getElementById('carousel').addEventListener('mouseenter', pauseAutoplay);
     document.getElementById('carousel').addEventListener('mouseleave', startAutoplay);
 }
-
 
 // Video player setup
 function setupVideoPlayer() {
@@ -155,81 +154,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     setupVideoPlayer(); // Setup video player if on a page with a video player
-});
-document.addEventListener("DOMContentLoaded", function() {
-    const video = document.getElementById("videoElement");
-    // Make sure video and related elements are present
-    if (!video) return;
-
-    const playPauseBtn = document.getElementById("playPause");
-    const progress = document.getElementById("progress");
-    const volumeControl = document.getElementById("volume");
-    const currentTimeDisplay = document.getElementById("currentTime");
-    const durationDisplay = document.getElementById("duration");
-    const fullscreenBtn = document.getElementById("fullscreenBtn");
-    const videoControls = document.querySelector('.video-controls');
-
-    function updateControlsVisibility() {
-        if (video.paused) {
-            videoControls.classList.add('video-controls-visible');
-        } else {
-            videoControls.classList.remove('video-controls-visible');
-        }
-    }
-
-    function togglePlayPause() {
-        if (video.paused || video.ended) {
-            video.play();
-            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-        } else {
-            video.pause();
-            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-        }
-        updateControlsVisibility();
-    }
-
-    // Attach event listeners
-    playPauseBtn.addEventListener("click", togglePlayPause);
-    video.addEventListener("click", togglePlayPause);
-    video.addEventListener("timeupdate", function() {
-        const progressValue = (video.currentTime / video.duration) * 100;
-        progress.value = progressValue;
-        let currentMinutes = Math.floor(video.currentTime / 60);
-        let currentSeconds = Math.floor(video.currentTime - currentMinutes * 60);
-        currentTimeDisplay.textContent = `${currentMinutes}:${currentSeconds.toString().padStart(2, '0')}`;
-    });
-
-    progress.addEventListener("input", function() {
-        const time = (progress.value * video.duration) / 100;
-        video.currentTime = time;
-    });
-
-    volumeControl.addEventListener("input", function() {
-        video.volume = volumeControl.value;
-    });
-
-    video.addEventListener("loadedmetadata", function() {
-        const durationMinutes = Math.floor(video.duration / 60);
-        const durationSeconds = Math.floor(video.duration - durationMinutes * 60);
-        durationDisplay.textContent = `${durationMinutes}:${durationSeconds.toString().padStart(2, '0')}`;
-    });
-
-    fullscreenBtn.addEventListener("click", function() {
-        if (!document.fullscreenElement) {
-            video.requestFullscreen ? video.requestFullscreen() : video.webkitRequestFullscreen();
-            fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
-        } else {
-            document.exitFullscreen ? document.exitFullscreen() : document.webkitExitFullscreen();
-            fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
-        }
-    });
-
-    video.addEventListener('play', updateControlsVisibility);
-    video.addEventListener('pause', updateControlsVisibility);
-    video.addEventListener('ended', function() {
-        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-        updateControlsVisibility();
-    });
-
-    updateControlsVisibility(); // Initial call to set visibility
 });
